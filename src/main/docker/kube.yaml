@@ -17,7 +17,7 @@ spec:
         spec:
             containers:
             - name: user-setting
-              image: user-setting:dev1.3
+              image: user-setting:dev1.4
               imagePullPolicy: IfNotPresent
               ports:
               - containerPort: 8080
