@@ -22,16 +22,20 @@ public class UserSettingService{
         return repository.count();
     }
     public List<UserSetting> findAll(){
-        return repository.findAll();
+        List<UserSetting> all = repository.findAll();
+        return UserSetting.hideId(all);
     }
     public List<UserSetting> findByCurrency(String curr){
-        return repository.findByCurrency(curr);
+        List<UserSetting> all = repository.findByCurrency(curr);
+        return UserSetting.hideId(all);
     }
     public List<UserSetting> findByUserId(String uId){
-        return repository.findByUserId(uId);
+        List<UserSetting> all = repository.findByUserId(uId);
+        return UserSetting.hideId(all);
     }
     public UserSetting findById(String id){
-        return repository.findById(id).get();
+        UserSetting result = repository.findById(id).get();
+        return UserSetting.hideId(result);
     }
     public UserSetting addUserSetting(UserSettingVO userSettingVO){
         UserSetting userSetting = new UserSetting();

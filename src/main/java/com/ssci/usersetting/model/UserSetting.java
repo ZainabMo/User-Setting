@@ -1,5 +1,7 @@
 package com.ssci.usersetting.model;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -34,4 +36,14 @@ public class UserSetting {
         id, currency, landingPage, userId);
   }
 
+  public static List<UserSetting> hideId(List<UserSetting> userSettingList){
+    for(UserSetting userSetting : userSettingList){
+      userSetting.setId(null);
+    }
+    return userSettingList;
+  }
+  public static UserSetting hideId(UserSetting userSetting){
+    userSetting.setId(null);
+    return userSetting;
+  }
 }
